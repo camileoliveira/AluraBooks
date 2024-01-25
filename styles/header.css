@@ -1,0 +1,181 @@
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--white-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* essa posiçao pq quero que a lista de posicine relativo ao cabeçalho */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__img {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    /*marquei o elemento que quero a posição absoluta com relação ao elemento relativo
+ que marquei*/
+    top: 100%;
+    /*quero 100% do topo do elemento, isto é, logo abaixo */
+    width: 25vh;
+    list-style: none;
+}
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu__link {
+    text-decoration: none;
+    background: var(--azul-degrade);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: 16px;
+    background-color: var(--white-background);
+}
+
+.lista-menu__titulo {
+    color: var(--text-yellow);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__titulo {
+    display: none;
+}
+
+.opcoes {
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer{
+    background-image: url(../img/menu_black_24dp\ 1.svg);
+}
+
+.container__botao:checked~.container__rotulo{
+    background: var(--azul-degrade);
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container__titulo,
+    .container__titulo-negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo-negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+    }
+
+    .opcoes__item {
+        text-transform: uppercase;
+        padding: 0 1em;
+        list-style: none;
+    }
+
+    .opcoes__item--link {
+        text-decoration: none;
+        color: black;
+    }
+
+    .opções_botão:checked~.opcoes__rotulo>.opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--white-background);
+    
+    }
+
+    .opcoes__item{
+        padding: 1em 1em;
+    }
+
+    .lista-menu__item{
+        width: 100%;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link{
+       -webkit-text-fill-color: var(--white-background);
+    }
+
+    .container__img--transparente {
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer {
+        display: none;
+    }
+
+
+    .opções_botão:checked~.lista-menu {
+        display: block;
+    }
+
+    .opções_botão {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .container__texto{
+        display: block;
+    }
+
+    .opcoes{
+        margin-right: 30em;
+    }
+}
